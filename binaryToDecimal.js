@@ -1,5 +1,5 @@
-//algoritma bruteforce
-function bruteforce(binary) {
+//Algoritma bruteforce
+function binaryToDecimalBruteForce(binary) {
     for (const bit of binary) {
         if (bit !== '0' && bit !== '1') {
             return null;
