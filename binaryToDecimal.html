@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary to Decimal Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ecffec;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 30%;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #results {
+            margin-top: 20px;
+            margin-left: 400px;
+            margin-right: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: none;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        b {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+    <script src="code.js"></script>
+</head>
+
+<body>
+    <h1>Binary to Decimal Converter</h1>
+    <label for="binaryInput">Enter Binary Number:</label>
+    <input type="text" id="binaryInput" placeholder="Masukkan angka biner" onkeyup="handleKeyPress(event)">
+    <div class="button-container">
+        <button onclick="convertBinToDec()">Convert</button>
+        <button onclick="resetPage()">Reset</button>
+    </div>
+    <div id="results">
+        <b id="BruteForce"></b>
+        <p id="decimalResultBruteForce"></p>
+        <p id="timeBruteForce"></p>
+        
+        <br>
+        <br>
+        <b id="DivideandConquer"></b>
+        <p id="decimalResultDivideConquer"></p>
+        <p id="timeDivideConquer"></p>
+    </div>
+
+    <script>
+        function convertBinToDec() {
+            var binaryInput = document.getElementById('binaryInput').value;
+
+            // Algoritma Brute Force
+            var startTimeBruteForce = performance.now();
+            var resultBruteForce = binaryToDecimal(binaryInput);
+            var endTimeBruteForce = performance.now();
+            var executionTimeBruteForce = endTimeBruteForce - startTimeBruteForce;
+
+            // Algoritma Divide and Conquer
+            var startTimeDivideConquer = performance.now();
+            var resultDivideConquer = binaryToDecimalDivideConquer(binaryInput);
+            var endTimeDivideConquer = performance.now();
+            var executionTimeDivideConquer = endTimeDivideConquer - startTimeDivideConquer;
+
+            // Menampilkan hasil dan waktu eksekusi
+            document.getElementById('BruteForce').textContent = 'Brute Force';
+            document.getElementById('decimalResultBruteForce').textContent = 'Decimal Equivalent: ' + resultBruteForce;
+            document.getElementById('timeBruteForce').textContent = 'Execution Time: ' + executionTimeBruteForce.toFixed(20) + ' ms';
+
+            document.getElementById('DivideandConquer').textContent = 'Divide and Conquer';
+            document.getElementById('decimalResultDivideConquer').textContent = 'Decimal Equivalent: ' + resultDivideConquer;
+            document.getElementById('timeDivideConquer').textContent = 'Execution Time: ' + executionTimeDivideConquer.toFixed(20) + ' ms';
+
+            // Show the results div
+            document.getElementById('results').style.display = 'block';
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                convertBinToDec();
+            }
+        }
+
+        function resetPage() {
+            document.getElementById('binaryInput').value = '';
+            document.getElementById('BruteForce').textContent = '';
+            document.getElementById('decimalResultBruteForce').textContent = '';
+            document.getElementById('timeBruteForce').textContent = '';
+            document.getElementById('DivideandConquer').textContent = '';
+            document.getElementById('decimalResultDivideConquer').textContent = '';
+            document.getElementById('timeDivideConquer').textContent = '';
+
+            // Hide the results div
+            document.getElementById('results').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
