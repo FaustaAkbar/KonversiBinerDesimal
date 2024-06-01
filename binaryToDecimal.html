@@ -68,7 +68,9 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
+            /* Center the text in the results div */
             display: none;
+            /* Hide the results div initially */
         }
 
         p {
@@ -80,11 +82,12 @@
         b {
             font-size: 18px;
             display: block;
+            /* Ensure it behaves like a block element */
             margin-bottom: 10px;
             text-align: center;
         }
     </style>
-    <script src="code.js"></script>
+    <script src="binaryToDecimal.js"></script>
 </head>
 
 <body>
@@ -99,7 +102,7 @@
         <b id="BruteForce"></b>
         <p id="decimalResultBruteForce"></p>
         <p id="timeBruteForce"></p>
-        
+
         <br>
         <br>
         <b id="DivideandConquer"></b>
@@ -113,7 +116,7 @@
 
             // Algoritma Brute Force
             var startTimeBruteForce = performance.now();
-            var resultBruteForce = binaryToDecimal(binaryInput);
+            var resultBruteForce = binaryToDecimalBruteForce(binaryInput);
             var endTimeBruteForce = performance.now();
             var executionTimeBruteForce = endTimeBruteForce - startTimeBruteForce;
 
@@ -126,11 +129,14 @@
             // Menampilkan hasil dan waktu eksekusi
             document.getElementById('BruteForce').textContent = 'Brute Force';
             document.getElementById('decimalResultBruteForce').textContent = 'Decimal Equivalent: ' + resultBruteForce;
-            document.getElementById('timeBruteForce').textContent = 'Execution Time: ' + executionTimeBruteForce.toFixed(20) + ' ms';
+            document.getElementById('timeBruteForce').textContent = 'Execution Time: ' + executionTimeBruteForce
+                .toFixed(20) + ' ms';
 
             document.getElementById('DivideandConquer').textContent = 'Divide and Conquer';
-            document.getElementById('decimalResultDivideConquer').textContent = 'Decimal Equivalent: ' + resultDivideConquer;
-            document.getElementById('timeDivideConquer').textContent = 'Execution Time: ' + executionTimeDivideConquer.toFixed(20) + ' ms';
+            document.getElementById('decimalResultDivideConquer').textContent = 'Decimal Equivalent: ' +
+                resultDivideConquer;
+            document.getElementById('timeDivideConquer').textContent = 'Execution Time: ' + executionTimeDivideConquer
+                .toFixed(20) + ' ms';
 
             // Show the results div
             document.getElementById('results').style.display = 'block';
