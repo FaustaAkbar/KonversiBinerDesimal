@@ -1,33 +1,33 @@
-# Konversi Biner ke Desimal
+# Binary to Decimal Conversion
 
-Repository ini berisi sebuah website yang melakukan konversi angka biner ke desimal dengan menggunakan dua metode: **Divide and Conquer** dan **Brute Force**.
+This repository contains a website that converts binary numbers to decimal using two methods: **Divide and Conquer** and **Brute Force**.
 
-## Fitur
+## Features
 
-- **Divide and Conquer**: Metode ini memecah proses konversi menjadi sub-masalah yang lebih kecil, kemudian menggabungkan hasilnya untuk mendapatkan solusi akhir. Metode ini lebih efisien dalam waktu komputasi pada skala besar.
-- **Brute Force**: Metode tradisional yang secara iteratif mengonversi angka biner menjadi desimal melalui proses perhitungan langsung.
+- **Divide and Conquer**: This method breaks the conversion process into smaller sub-problems, then combines the results to get the final solution. This method is more efficient in terms of computational time, especially for large-scale inputs.
+- **Brute Force**: A traditional method that iteratively converts binary numbers into decimal through direct calculations.
 
-## Cara Penggunaan
+## How to Use
 
-1. Buka [website konversi](https://faustaakbar.github.io/KonversiBinerDesimal/).
-2. Masukkan angka biner yang ingin dikonversi.
-3. Pilih metode yang ingin digunakan (**Divide and Conquer** atau **Brute Force**).
-4. Hasil konversi akan ditampilkan dalam bentuk desimal.
+1. Open the [conversion website](https://faustaakbar.github.io/KonversiBinerDesimal/).
+2. Enter the binary number you want to convert.
+3. Select the method you wish to use (**Divide and Conquer** or **Brute Force**).
+4. The conversion result will be displayed in decimal format.
 
-## Teknologi yang Digunakan
+## Technologies Used
 
 - HTML
 - CSS
 - JavaScript
 
-## Link Website
+## Website Link
 
-Akses aplikasi web di sini: [Konversi Biner ke Desimal](https://faustaakbar.github.io/KonversiBinerDesimal/)
+Access the web application here: [Binary to Decimal Converter](https://faustaakbar.github.io/KonversiBinerDesimal/)
 
-## Kontribusi
+## Contributions
 
-Pull request selalu diterima. Untuk perubahan besar, harap membuka issue terlebih dahulu untuk mendiskusikan perubahan yang ingin Anda lakukan.
+Pull requests are always welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## Lisensi
+## License
 
-Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
